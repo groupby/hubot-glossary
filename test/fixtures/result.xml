@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:gsx="http://schemas.google.com/spreadsheets/2006/extended" xmlns:openSearch="http://a9.com/-/spec/opensearchrss/1.0/">
+  <id>https://spreadsheets.google.com/feeds/list/qQ38TgkaPOI1AwOa4C6Pg0bqBP7giPrYrlt54tqgHTQc/1/private/full</id>
+  <updated>2015-01-29T02:31:41.669Z</updated>
+  <category scheme="http://schemas.google.com/spreadsheets/2006" term="http://schemas.google.com/spreadsheets/2006#list" />
+  <title type="text">Sheet1</title>
+  <link rel="alternate" type="application/atom+xml" href="https://docs.google.com/a/groupbyinc.com/spreadsheets/d/qQ38TgkaPOI1AwOa4C6Pg0bqBP7giPrYrlt54tqgHTQc/edit" />
+  <link rel="http://schemas.google.com/g/2005#feed" type="application/atom+xml" href="https://spreadsheets.google.com/feeds/list/qQ38TgkaPOI1AwOa4C6Pg0bqBP7giPrYrlt54tqgHTQc/1/private/full" />
+  <link rel="http://schemas.google.com/g/2005#post" type="application/atom+xml" href="https://spreadsheets.google.com/feeds/list/qQ38TgkaPOI1AwOa4C6Pg0bqBP7giPrYrlt54tqgHTQc/1/private/full" />
+  <link rel="self" type="application/atom+xml" href="https://spreadsheets.google.com/feeds/list/qQ38TgkaPOI1AwOa4C6Pg0bqBP7giPrYrlt54tqgHTQc/1/private/full" />
+  <author>
+    <name>john.wayne</name>
+    <email>john.wayne@test.com</email>
+  </author>
+  <openSearch:totalResults>2</openSearch:totalResults>
+  <openSearch:startIndex>1</openSearch:startIndex>
+  <entry>
+    <id>https://spreadsheets.google.com/feeds/list/qQ38TgkaPOI1AwOa4C6Pg0bqBP7giPrYrlt54tqgHTQc/1/private/full/cokwr</id>
+    <updated>2015-01-29T02:31:41.669Z</updated>
+    <category scheme="http://schemas.google.com/spreadsheets/2006" term="http://schemas.google.com/spreadsheets/2006#list" />
+    <title type="text">Congo dao</title>
+    <content type="text">description: Congo is the database data access object (dao) layer that stores domain logic objects in the elastic search engine. All DB logic should go here.  https://github.com/groupby/bindle/blob/develop/congo/README.md</content>
+    <link rel="self" type="application/atom+xml" href="https://spreadsheets.google.com/feeds/list/qQ38TgkaPOI1AwOa4C6Pg0bqBP7giPrYrlt54tqgHTQc/1/private/full/cokwr" />
+    <link rel="edit" type="application/atom+xml" href="https://spreadsheets.google.com/feeds/list/qQ38TgkaPOI1AwOa4C6Pg0bqBP7giPrYrlt54tqgHTQc/1/private/full/cokwr/pa7gnf4j7g" />
+    <gsx:term>Congo dao</gsx:term>
+    <gsx:description>Congo is the database data access object (dao) layer that stores domain logic objects in the elastic search engine. All DB logic should go here.  https://github.com/groupby/bindle/blob/develop/congo/README.md</gsx:description>
+  </entry>
+  <entry>
+    <id>https://spreadsheets.google.com/feeds/list/qQ38TgkaPOI1AwOa4C6Pg0bqBP7giPrYrlt54tqgHTQc/1/private/full/cpzh4</id>
+    <updated>2015-01-29T02:31:41.669Z</updated>
+    <category scheme="http://schemas.google.com/spreadsheets/2006" term="http://schemas.google.com/spreadsheets/2006#list" />
+    <title type="text">Bindle</title>
+    <content type="text">description: Super cool name for the project. This is just to test my hubot script. please don't remove just yet</content>
+    <link rel="self" type="application/atom+xml" href="https://spreadsheets.google.com/feeds/list/qQ38TgkaPOI1AwOa4C6Pg0bqBP7giPrYrlt54tqgHTQc/1/private/full/cpzh4" />
+    <link rel="edit" type="application/atom+xml" href="https://spreadsheets.google.com/feeds/list/qQ38TgkaPOI1AwOa4C6Pg0bqBP7giPrYrlt54tqgHTQc/1/private/full/cpzh4/658ag6ehbh" />
+    <gsx:term>Bindle</gsx:term>
+    <gsx:description>Super cool name for the project. This is just to test my hubot script. please don't remove just yet</gsx:description>
+  </entry>
+</feed>

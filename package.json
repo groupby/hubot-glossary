@@ -1,0 +1,51 @@
+{
+  "name": "hubot-glossary",
+  "description": "Glossary of GroupBy technical terms",
+  "version": "0.1.0",
+  "author": {
+    "name": "ferronrsmith",
+    "email": "ferronrsmith@gmail.com"
+  },
+  "license": "MIT",
+  "keywords": [
+    "hubot",
+    "hubot-scripts",
+    "quote"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:bot-scripts/hubot-glossary.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bot-scripts/hubot-glossary/issues"
+  },
+  "dependencies": {
+    "fuzzy": "^0.1.0",
+    "google-spreadsheet": "^0.2.8"
+  },
+  "peerDependencies": {
+    "hubot": "2.x"
+  },
+  "devDependencies": {
+    "chai": "*",
+    "coffee-script": "^1.8.0",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-mocha-test": "~0.7.0",
+    "grunt-release": "~0.6.0",
+    "hubot": "2.x",
+    "hubot-help": "^0.1.1",
+    "hubot-mock-adapter": "^1.0.0",
+    "hubot-mock-adapter-helper": "0.0.1",
+    "matchdep": "~0.1.2",
+    "mocha": "*",
+    "nock": "^0.57.0",
+    "sinon": "*",
+    "sinon-chai": "*"
+  },
+  "main": "index.coffee",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "homepage": "https://github.com/bot-scripts/hubot-glossary"
+}
