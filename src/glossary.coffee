@@ -32,7 +32,6 @@ module.exports = (robot) ->
 
     # if auth is set, you can edit. you read the rows while authenticated in order to get the edit feed URLs from google
     sheet.setAuth process.env["GOOGLE_USER_NAME"], process.env["GOOGLE_PASSWORD"], (err) ->
-      console.log " GOOGLE AUTH SUCCESS!"
       sheet.getRows 1, (err, rows) ->
         console.log err  if err
         if rows? and rows.length > 0
