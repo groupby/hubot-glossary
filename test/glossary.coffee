@@ -8,6 +8,7 @@ expect = chai.expect
 helper = require 'hubot-mock-adapter-helper'
 TextMessage = require("hubot/src/message").TextMessage
 process.env.HUBOT_LOG_LEVEL = 'debug'
+process.env.GOOGLE_SPREADSHEET_KEY = '17giPrYrlt54tqgHTQcAwOa4C6Pg0bqBPqQ38TgkaPOI'
 
 describe 'quote', ->
   {robot, user, adapter} = {}

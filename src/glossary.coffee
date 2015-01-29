@@ -8,8 +8,9 @@
 #   "google-spreadsheet": "^0.2.8"
 #
 # Configuration:
+#   GOOGLE_SPREADSHEET_KEY
 #   GOOGLE_USER_NAME
-#   GOOGLE_PASSWORD
+#   GOOGLE_USER_PASSWORD
 #
 # Commands:
 #   hubot what is ? - Glossary of GroupBy technical terms
@@ -28,10 +29,10 @@ module.exports = (robot) ->
 
     err_msg = "Oops I couldn't find anything :( "
 
-    sheet = new GoogleSpreadsheet( "17giPrYrlt54tqgHTQcAwOa4C6Pg0bqBPqQ38TgkaPOI");
+    sheet = new GoogleSpreadsheet(process.env["GOOGLE_SPREADSHEET_KEY"]);
 
     # if auth is set, you can edit. you read the rows while authenticated in order to get the edit feed URLs from google
-    sheet.setAuth process.env["GOOGLE_USER_NAME"], process.env["GOOGLE_PASSWORD"], (err) ->
+    sheet.setAuth process.env["GOOGLE_USER_NAME"], process.env["GOOGLE_USER_PASSWORD"], (err) ->
       sheet.getRows 1, (err, rows) ->
         console.log err  if err
         if rows? and rows.length > 0

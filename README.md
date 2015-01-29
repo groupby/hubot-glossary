@@ -25,9 +25,11 @@ The following environment variables must be set to allow hubot access to the goo
 
 > NB : Public 
 
-`GOOGLE_USER_NAME` - hubot username for google docs 
+`GOOGLE_USER_NAME` - hubot email address for google docs 
 
-`GOOGLE_PASSWORD`  - hubot password for google docs 
+`GOOGLE_USER_PASSWORD`  - hubot password for google docs 
+
+`GOOGLE_SPREADSHEET_KEY`  - spreadsheet key
 
 ## Sample Interaction
 
