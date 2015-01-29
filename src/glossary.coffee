@@ -22,8 +22,10 @@ GoogleSpreadsheet = require "google-spreadsheet"
 fuzzy = require 'fuzzy'
 
 module.exports = (robot) ->
-  robot.respond /what is (.*) \?$/i, (msg) ->
+  robot.respond /what is (.*) \??/i, (msg) ->
     term = msg.match[1]
+
+    term = term.trim() if term.length > 0
 
     items = [];
 

@@ -76,3 +76,23 @@ describe 'quote', ->
           'Oops I couldn\'t find anything :( '
         ]
       adapter.receive new TextMessage(user, "hubot what is stream ?")
+
+    it 'retrieve glossary description for congo with excess white space', ->
+      adapter.on 'send', (envelope, strings) ->
+        expect(strings).to.deep.equal [
+          [ "Congo is the database data access object (dao) layer that stores domain logic objects in the " +
+              "elastic search engine. All DB logic should go here.  " +
+              "https://github.com/groupby/bindle/blob/develop/congo/README.md"
+          ]
+        ]
+      adapter.receive new TextMessage(user, "hubot what is         Congo                ?")
+
+    it 'retrieve glossary description for congo with excess white space and no question mark', ->
+      adapter.on 'send', (envelope, strings) ->
+        expect(strings).to.deep.equal [
+          [ "Congo is the database data access object (dao) layer that stores domain logic objects in the " +
+              "elastic search engine. All DB logic should go here.  " +
+              "https://github.com/groupby/bindle/blob/develop/congo/README.md"
+          ]
+        ]
+      adapter.receive new TextMessage(user, "hubot what is         Congo                ")
