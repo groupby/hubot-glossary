@@ -23,13 +23,10 @@ Then add **hubot-glossary** to your `external-scripts.json`:
 
 The following environment variables must be set to allow hubot access to the google spreadsheet.
 
-> NB : Public 
 
-`GOOGLE_USER_NAME` - hubot email address for google docs 
-
-`GOOGLE_USER_PASSWORD`  - hubot password for google docs 
-
-`GOOGLE_SPREADSHEET_KEY`  - spreadsheet key
+- `GOOGLE_USER_NAME` - hubot email address for google docs. 
+- `GOOGLE_USER_PASSWORD`  - hubot password for google docs.
+- `GOOGLE_SPREADSHEET_KEY`  - spreadsheet key
 
 ## Sample Interaction
 
