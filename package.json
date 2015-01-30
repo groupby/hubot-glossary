@@ -21,7 +21,8 @@
   },
   "dependencies": {
     "fuzzy": "^0.1.0",
-    "google-spreadsheet": "^0.2.8"
+    "google-spreadsheet": "^0.2.8",
+    "lodash": "^3.0.1"
   },
   "peerDependencies": {
     "hubot": "2.x"
