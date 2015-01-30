@@ -20,7 +20,6 @@
 
 GoogleSpreadsheet = require "google-spreadsheet"
 fuzzy = require 'fuzzy'
-_ = require 'lodash'
 
 module.exports = (robot) ->
   robot.respond /what is (.*) \??/i, (msg) ->
@@ -68,9 +67,8 @@ module.exports = (robot) ->
                     # take a random two
                     result = _.sample(def, 2)
                     res="";
-                    _.forEach(result,  (el, idx) ->
+                    result.forEach  (el, idx) ->
                       res += "#{idx+1}. #{el.text}\n"
-                    )
                     matches = res;
               msg.send matches
         else
