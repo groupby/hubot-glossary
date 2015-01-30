@@ -20,6 +20,7 @@
 
 GoogleSpreadsheet = require "google-spreadsheet"
 fuzzy = require 'fuzzy'
+_ = require 'lodash'
 
 module.exports = (robot) ->
   robot.respond /what is (.*) \??/i, (msg) ->
@@ -29,7 +30,7 @@ module.exports = (robot) ->
 
     items = [];
 
-    err_msg = "Oops I couldn't find anything :( "
+    err_msg = "Oops I couldn't find anything :-("
 
     sheet = new GoogleSpreadsheet(process.env["GOOGLE_SPREADSHEET_KEY"]);
 
@@ -53,9 +54,25 @@ module.exports = (robot) ->
             el.original.content
           )
 
-          matches = err_msg  if matches.length is 0
 
-          msg.send matches
+          if matches.length is 0
+            matches = err_msg
+            robot.http("https://glosbe.com/gapi/translate?from=eng&dest=eng&format=json&phrase=#{term}")
+            .get() (err, res, body) ->
+              if res? and res.statusCode is 200 and body?
+                data = JSON.parse(body)
+                def = data["tuc"]
+                if def.length > 0
+                  def = def[0]["meanings"]
+                  if def.length > 0
+                    # take a random two
+                    result = _.sample(def, 2)
+                    res="";
+                    _.forEach(result,  (el, idx) ->
+                      res += "#{idx+1}. #{el.text}\n"
+                    )
+                    matches = res;
+              msg.send matches
         else
           msg.send err_msg
 

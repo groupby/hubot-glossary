@@ -1,0 +1,514 @@
+{
+  "result": "ok",
+  "authors": {
+    "9": {
+      "U": "http://fr.wiktionary.org",
+      "id": 9,
+      "N": "fr.wiktionary.org",
+      "url": "https://glosbe.com/source/9"
+    },
+    "14": {
+      "U": "http://sv.wiktionary.org",
+      "id": 14,
+      "N": "sv.wiktionary.org",
+      "url": "https://glosbe.com/source/14"
+    },
+    "2698": {
+      "U": "http://dumps.wikimedia.org/frwiktionary/latest/frwiktionary-latest-pages-articles.xml.bz2",
+      "id": 2698,
+      "N": "Wiktionnaire",
+      "url": "https://glosbe.com/source/2698"
+    },
+    "2736": {
+      "U": "http://www.csse.monash.edu.au/~jwb/j_jmdict.html",
+      "id": 2736,
+      "N": "JMdict-Japanese-Multilingual-Dictio...",
+      "url": "https://glosbe.com/source/2736"
+    },
+    "60172": {
+      "U": "http://www.omegawiki.org/",
+      "id": 60172,
+      "N": "omegawiki",
+      "url": "https://glosbe.com/source/60172"
+    },
+    "69425": {
+      "U": "",
+      "id": 69425,
+      "N": "plwiktionary.org",
+      "url": "https://glosbe.com/source/69425"
+    }
+  },
+  "dest": "en",
+  "phrase": "good",
+  "tuc": [
+    {
+      "authors": [
+        2736
+      ],
+      "meaningId": null,
+      "meanings": [
+        {
+          "text": "good (in moral judgement only) (judgment)",
+          "language": "en"
+        }
+      ]
+    },
+    {
+      "authors": [
+        9
+      ],
+      "meaningId": null,
+      "phrase": {
+        "text": "sage",
+        "language": "en"
+      }
+    },
+    {
+      "authors": [
+        69425
+      ],
+      "meaningId": null,
+      "phrase": {
+        "text": "kick",
+        "language": "en"
+      }
+    },
+    {
+      "authors": [
+        9
+      ],
+      "meaningId": null,
+      "phrase": {
+        "text": "wise",
+        "language": "en"
+      }
+    },
+    {
+      "authors": [
+        60172
+      ],
+      "meaningId": null,
+      "meanings": [
+        {
+          "text": "Of moral excellence.",
+          "language": "en"
+        }
+      ],
+      "phrase": {
+        "text": "virtuous",
+        "language": "en"
+      }
+    },
+    {
+      "authors": [
+        2736
+      ],
+      "meaningId": null,
+      "phrase": {
+        "text": "as one would expect",
+        "language": "en"
+      }
+    },
+    {
+      "authors": [
+        2698
+      ],
+      "meaningId": null,
+      "phrase": {
+        "text": "alluring",
+        "language": "en"
+      }
+    },
+    {
+      "authors": [
+        2698
+      ],
+      "meaningId": null,
+      "phrase": {
+        "text": "nice",
+        "language": "en"
+      }
+    },
+    {
+      "authors": [
+        2698
+      ],
+      "meaningId": null,
+      "phrase": {
+        "text": "kind",
+        "language": "en"
+      }
+    },
+    {
+      "authors": [
+        14
+      ],
+      "meaningId": null,
+      "phrase": {
+        "text": "comfortable",
+        "language": "en"
+      }
+    },
+    {
+      "authors": [
+        14
+      ],
+      "meaningId": null,
+      "phrase": {
+        "text": "time",
+        "language": "en"
+      }
+    },
+    {
+      "authors": [
+        2698
+      ],
+      "meaningId": null,
+      "phrase": {
+        "text": "gentle",
+        "language": "en"
+      }
+    },
+    {
+      "authors": [
+        9
+      ],
+      "meaningId": null,
+      "phrase": {
+        "text": "sagacious",
+        "language": "en"
+      }
+    },
+    {
+      "authors": [
+        69425
+      ],
+      "meaningId": null,
+      "phrase": {
+        "text": "scorer",
+        "language": "en"
+      }
+    },
+    {
+      "authors": [
+        14
+      ],
+      "meaningId": null,
+      "phrase": {
+        "text": "happy",
+        "language": "en"
+      }
+    },
+    {
+      "authors": [
+        2736
+      ],
+      "meaningId": null,
+      "phrase": {
+        "text": "expectations",
+        "language": "en"
+      }
+    },
+    {
+      "authors": [
+        2698
+      ],
+      "meaningId": null,
+      "phrase": {
+        "text": "lovely",
+        "language": "en"
+      }
+    },
+    {
+      "authors": [
+        2698
+      ],
+      "meaningId": null,
+      "phrase": {
+        "text": "winsome",
+        "language": "en"
+      }
+    },
+    {
+      "authors": [
+        2698
+      ],
+      "meaningId": null,
+      "phrase": {
+        "text": "disarming",
+        "language": "en"
+      }
+    },
+    {
+      "authors": [
+        60172
+      ],
+      "meaningId": null,
+      "meanings": [
+        {
+          "text": "Of moral excellence.",
+          "language": "en"
+        }
+      ],
+      "phrase": {
+        "text": "just",
+        "language": "en"
+      }
+    },
+    {
+      "authors": [
+        60172
+      ],
+      "meaningId": null,
+      "meanings": [
+        {
+          "text": "The nutritional, healthy part of something.",
+          "language": "en"
+        }
+      ],
+      "phrase": {
+        "text": "goodness",
+        "language": "en"
+      }
+    },
+    {
+      "authors": [
+        9
+      ],
+      "meaningId": null,
+      "phrase": {
+        "text": "prudent",
+        "language": "en"
+      }
+    },
+    {
+      "authors": [
+        14
+      ],
+      "meaningId": null,
+      "phrase": {
+        "text": "get on well",
+        "language": "en"
+      }
+    },
+    {
+      "authors": [
+        2698
+      ],
+      "meaningId": null,
+      "phrase": {
+        "text": "friendly",
+        "language": "en"
+      }
+    },
+    {
+      "authors": [
+        14
+      ],
+      "meaningId": null,
+      "phrase": {
+        "text": "enjoy",
+        "language": "en"
+      }
+    },
+    {
+      "authors": [
+        2698
+      ],
+      "meaningId": null,
+      "phrase": {
+        "text": "fair",
+        "language": "en"
+      }
+    },
+    {
+      "authors": [
+        9
+      ],
+      "meaningId": null,
+      "phrase": {
+        "text": "reasonable",
+        "language": "en"
+      }
+    },
+    {
+      "authors": [
+        2698
+      ],
+      "meaningId": null,
+      "phrase": {
+        "text": "soft",
+        "language": "en"
+      }
+    },
+    {
+      "authors": [
+        60172
+      ],
+      "meaningId": null,
+      "meanings": [
+        {
+          "text": "Of moral excellence.",
+          "language": "en"
+        }
+      ],
+      "phrase": {
+        "text": "upright",
+        "language": "en"
+      }
+    },
+    {
+      "authors": [
+        2698
+      ],
+      "meaningId": null,
+      "phrase": {
+        "text": "charming",
+        "language": "en"
+      }
+    },
+    {
+      "authors": [
+        2698
+      ],
+      "meaningId": null,
+      "phrase": {
+        "text": "kindly",
+        "language": "en"
+      }
+    },
+    {
+      "authors": [
+        9
+      ],
+      "meaningId": null,
+      "phrase": {
+        "text": "sensible",
+        "language": "en"
+      }
+    },
+    {
+      "authors": [
+        2698
+      ],
+      "meaningId": null,
+      "phrase": {
+        "text": "sweet",
+        "language": "en"
+      }
+    },
+    {
+      "authors": [
+        9
+      ],
+      "meaningId": null,
+      "phrase": {
+        "text": "farsighted",
+        "language": "en"
+      }
+    },
+    {
+      "authors": [
+        60172
+      ],
+      "meaningId": null,
+      "meanings": [
+        {
+          "text": "In a thorough or complete manner.",
+          "language": "en"
+        }
+      ],
+      "phrase": {
+        "text": "soundly",
+        "language": "en"
+      }
+    },
+    {
+      "authors": [
+        9
+      ],
+      "meaningId": null,
+      "phrase": {
+        "text": "sound",
+        "language": "en"
+      }
+    },
+    {
+      "authors": [
+        2698
+      ],
+      "meaningId": null,
+      "phrase": {
+        "text": "tender",
+        "language": "en"
+      }
+    },
+    {
+      "authors": [
+        2736
+      ],
+      "meaningId": null,
+      "phrase": {
+        "text": "clever",
+        "language": "en"
+      }
+    },
+    {
+      "authors": [
+        14
+      ],
+      "meaningId": null,
+      "phrase": {
+        "text": "thrive",
+        "language": "en"
+      }
+    },
+    {
+      "authors": [
+        60172
+      ],
+      "meaningId": null,
+      "meanings": [
+        {
+          "text": "In a thorough or complete manner.",
+          "language": "en"
+        }
+      ],
+      "phrase": {
+        "text": "thoroughly",
+        "language": "en"
+      }
+    },
+    {
+      "authors": [
+        2736
+      ],
+      "meaningId": null,
+      "phrase": {
+        "text": "adept",
+        "language": "en"
+      }
+    },
+    {
+      "authors": [
+        2698
+      ],
+      "meaningId": null,
+      "phrase": {
+        "text": "affable",
+        "language": "en"
+      }
+    },
+    {
+      "authors": [
+        9
+      ],
+      "meaningId": null,
+      "phrase": {
+        "text": "judicious",
+        "language": "en"
+      }
+    }
+  ],
+  "from": "en"
+}

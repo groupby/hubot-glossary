@@ -16,8 +16,13 @@ describe 'quote', ->
 
   beforeEach (done)->
 
+    # disable real http requests
     nock.disableNetConnect()
-    nockScope = nock 'https://spreadsheets.google.com/feeds/list/17giPrYrlt54tqgHTQcAwOa4C6Pg0bqBPqQ38TgkaPOI/1/'
+
+    nock('https://spreadsheets.google.com/feeds/list/17giPrYrlt54tqgHTQcAwOa4C6Pg0bqBPqQ38TgkaPOI/1/')
+          .get('/public/values')
+          .replyWithFile(200, __dirname +  '/fixtures/result.xml')
+
     nock.enableNetConnect '127.0.0.1'
 
     helper.setupRobot (ret) ->
@@ -46,9 +51,6 @@ describe 'quote', ->
       ]
 
   describe 'robot response with 200', ->
-    beforeEach ->
-      nockScope = nockScope.get "/public/values"
-      nockScope.reply 200, fs.readFileSync path.resolve(__dirname, 'fixtures/result.xml'), "utf8"
 
     it 'retrieve glossary description for bindle', ->
       adapter.on 'send', (envelope, strings) ->
@@ -69,14 +71,6 @@ describe 'quote', ->
         ]
       adapter.receive new TextMessage(user, "hubot what is Congo ?")
 
-
-    it 'search for phrase that does not exist with glossary ', ->
-      adapter.on 'send', (envelope, strings) ->
-        expect(strings).to.deep.equal [
-          'Oops I couldn\'t find anything :( '
-        ]
-      adapter.receive new TextMessage(user, "hubot what is stream ?")
-
     it 'retrieve glossary description for congo with excess white space', ->
       adapter.on 'send', (envelope, strings) ->
         expect(strings).to.deep.equal [
@@ -96,3 +90,32 @@ describe 'quote', ->
           ]
         ]
       adapter.receive new TextMessage(user, "hubot what is         Congo                ")
+
+  describe 'robot performing alternative search, results 200', ->
+    beforeEach ->
+      nock("https://glosbe.com/gapi/translate")
+      .get("?from=eng&dest=eng&format=json&phrase=stream")
+      .replyWithFile(200, __dirname + '/fixtures/result.json')
+
+
+    it 'search for phrase that does not exist with glossary ', ->
+      adapter.on 'send', (envelope, strings) ->
+        expect(strings).to.deep.equal [
+          "1. good (in moral judgement only) (judgment)\n"
+        ]
+      adapter.receive new TextMessage(user, "hubot what is stream ?")
+
+  describe 'robot performing alternative search, no results 400', ->
+    beforeEach ->
+      nock("https://glosbe.com/gapi/translate")
+      .get("?from=eng&dest=eng&format=json&phrase=stream")
+      .reply(400)
+
+    it 'search for phrase that does not exist in glossary', ->
+      adapter.on 'send', (envelope, strings) ->
+        expect(strings).to.deep.equal [
+          "Oops I couldn't find anything :-("
+        ]
+      adapter.receive new TextMessage(user, "hubot what is stream ?")
+
+
