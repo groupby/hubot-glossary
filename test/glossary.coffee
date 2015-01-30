@@ -101,7 +101,7 @@ describe 'quote', ->
     it 'search for phrase that does not exist with glossary ', ->
       adapter.on 'send', (envelope, strings) ->
         expect(strings).to.deep.equal [
-          "1. good (in moral judgement only) (judgment)\n"
+          "\n1. good (in moral judgement only) (judgment)\n"
         ]
       adapter.receive new TextMessage(user, "hubot what is stream ?")
 
