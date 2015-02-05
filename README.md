@@ -37,6 +37,13 @@ hubot>  Congo is the database data access object (dao) layer that stores...
 
 ## Sample Glossary
 
+The first line of the Spreadsheet denotes the Table headers and must not be used for anything else. Currently
+the header must be as shown below [Term, Description].
+
+Ensure no empty rows are between the glossary. When an empty is detected the 
+[spreadsheet API](https://developers.google.com/google-apps/spreadsheets/#retrieving_a_list-based_feed) will not return
+any other record after.
+
 | Term          | Description |
 | ------------- | ------------- |
 | Blame         | The "blame" feature in Git describes the last modification to each line of a file  |
