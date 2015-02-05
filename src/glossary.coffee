@@ -3,13 +3,9 @@
 #   the module uses fuzzy search to find the best match, hopefully no two terms
 #   has the same key
 #
-#   If there a term does not exists with-in the glossary an online dictionary is searched and
-#   two random results returned.
-#
 # Dependencies:
 #   "fuzzy": "^0.1.0"
 #   "google-spreadsheet": "^0.2.8"
-#   "lodash": "^3.0.1"
 #
 # Configuration:
 #   GOOGLE_SPREADSHEET_KEY
@@ -24,7 +20,6 @@
 
 GoogleSpreadsheet = require "google-spreadsheet"
 fuzzy = require 'fuzzy'
-_ = require 'lodash'
 
 module.exports = (robot) ->
   robot.respond /what is (.*)\??/i, (msg) ->
@@ -32,9 +27,7 @@ module.exports = (robot) ->
 
     term = term.split("\?")[0].trim() if term.length > 0
 
-
     items = [];
-    matches = ""
 
     err_msg = "Oops I couldn't find anything :-("
 
@@ -46,6 +39,9 @@ module.exports = (robot) ->
         console.log err  if err
         if rows? and rows.length > 0
           rows.forEach (element) ->
+
+            if element.term == 'UNKNOWN'
+              err_msg = element.description
             items.push
               title:element.term,
               content:element.description
@@ -60,36 +56,8 @@ module.exports = (robot) ->
             el.original.content
           )
 
-          # term doesn't exists with-in the glossary. perform a dictionary search
-          if matches.length is 0
-            matches = err_msg
-            robot.http("https://glosbe.com/gapi/translate?from=eng&dest=eng&format=json&phrase=#{term}")
-            .get() (err, res, body) ->
-              if res? and res.statusCode is 200 and body?
-                data = JSON.parse(body)
-                # check to ensure that a definition for the word exists
-                # if not `tuc` will not be present
-                if data["tuc"]?
-                  def = data["tuc"]
-                  if def.length > 0
+          matches = err_msg  if matches.length is 0
 
-                    # filter out all the elements that do not have a `meaning` attribute
-                    for elem in def
-                      if elem['meanings']?
-                        def = elem['meanings']
-                        break
-
-                    # check if definition is present
-                    if def.length > 0
-                      # take a random two definition
-                      result = _.sample(def, 2)
-                      res="\n";
-                      result.forEach (el, idx) ->
-                        res += "#{idx+1}. #{el.text}\n"
-                      matches = res
-                msg.send matches
-          else
-            msg.send matches
+          msg.send matches
         else
           msg.send err_msg
-

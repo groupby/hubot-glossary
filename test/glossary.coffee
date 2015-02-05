@@ -91,7 +91,18 @@ describe 'quote', ->
         ]
       adapter.receive new TextMessage(user, "hubot what is         Congo                ")
 
-  describe 'robot performing alternative search, results 200', ->
+    it 'search for phrase that does not exist with glossary ', ->
+      adapter.on 'send', (envelope, strings) ->
+
+        expect(strings).to.deep.equal [
+          "we don't know what that is.  Consider adding this term to the glossary document here:" +
+          "\n      https://docs.google.com/a/groupbyinc.com/spreadsheets/d/17giPrYrlt54tqgHTQcAwOa4C6Pg0bqBPqQ38TgkaPOI/edit" +
+          "\n      Alternatively have a look in the Tribal knowledge folder here: " +
+          "https://drive.google.com/drive/#folders/0B4knkCGNsFR-R1V4aEdmZnJBeXc/0B4knkCGNsFR-U1RVWTdUenNQczQ"
+        ]
+      adapter.receive new TextMessage(user, "hubot what is stream ?")
+
+  xdescribe 'robot performing alternative search, results 200', ->
     beforeEach ->
       nock("https://glosbe.com/gapi/translate")
       .get("?from=eng&dest=eng&format=json&phrase=stream")
@@ -105,7 +116,7 @@ describe 'quote', ->
         ]
       adapter.receive new TextMessage(user, "hubot what is stream ?")
 
-  describe 'robot performing alternative search, no results 400', ->
+  xdescribe 'robot performing alternative search, no results 400', ->
     beforeEach ->
       nock("https://glosbe.com/gapi/translate")
       .get("?from=eng&dest=eng&format=json&phrase=stream")
