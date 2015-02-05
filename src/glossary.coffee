@@ -1,7 +1,7 @@
 # Description:
-#   Messing around with reading technical glossary from a spreadsheet!
-#   the module uses fuzzy search to find the best match, hopefully no two terms
-#   has the same key
+#   The following module loads a glossary of terms from a google spreadsheet
+#   The module uses fuzzy search to find the best match, hopefully no two terms
+#   has the same key.
 #
 # Dependencies:
 #   "fuzzy": "^0.1.0"
@@ -39,9 +39,11 @@ module.exports = (robot) ->
         console.log err  if err
         if rows? and rows.length > 0
           rows.forEach (element) ->
-
+            # check row for the [UNKNOWN] term. Use this as the err_msg
             if element.term == 'UNKNOWN'
               err_msg = element.description
+
+            # add glossary term & description to the array
             items.push
               title:element.term,
               content:element.description
@@ -52,10 +54,11 @@ module.exports = (robot) ->
               el.title
           )
 
-          matches = results.map((el) ->
+          # retrieve the [content] of all match results
+          matches = results.map (el) ->
             el.original.content
-          )
 
+          # return [UNKNOWN] as an error_message if no matches exists
           matches = err_msg  if matches.length is 0
 
           msg.send matches
