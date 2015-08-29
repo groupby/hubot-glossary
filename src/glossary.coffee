@@ -20,6 +20,7 @@
 # fix to use jwt
 
 GoogleSpreadsheet = require "google-spreadsheet"
+passwdUser = require 'passwd-user'
 fuzzy = require 'fuzzy'
 
 module.exports = (robot) ->
@@ -34,7 +35,9 @@ module.exports = (robot) ->
 
     sheet = new GoogleSpreadsheet(process.env["GOOGLE_SPREADSHEET_KEY"]);
 
-    home_dir = process.env[(if process.platform is "win32" then "USERPROFILE" else "HOME")]
+    user_info = passwdUser.sync(process.getuid())
+
+    home_dir = user_info.home_dir || process.env[(if process.platform is "win32" then "USERPROFILE" else "HOME")]
 
     creds = require "#{home_dir}/.google-generated-creds.json"
 

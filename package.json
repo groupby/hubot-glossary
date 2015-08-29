@@ -21,7 +21,8 @@
   },
   "dependencies": {
     "fuzzy": "^0.1.0",
-    "google-spreadsheet": "^1.0.1"
+    "google-spreadsheet": "^1.0.1",
+    "passwd-user": "^1.2.1"
   },
   "peerDependencies": {
     "hubot": "2.x"
