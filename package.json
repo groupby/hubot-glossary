@@ -1,7 +1,7 @@
 {
   "name": "hubot-glossary",
   "description": "Glossary of GroupBy technical terms",
-  "version": "0.10.0",
+  "version": "0.11.0",
   "author": {
     "name": "ferronrsmith",
     "email": "ferronrsmith@gmail.com"
@@ -21,8 +21,7 @@
   },
   "dependencies": {
     "fuzzy": "^0.1.0",
-    "google-spreadsheet": "^1.0.1",
-    "passwd-user": "^1.2.1"
+    "google-spreadsheet": "^1.0.1"
   },
   "peerDependencies": {
     "hubot": "2.x"

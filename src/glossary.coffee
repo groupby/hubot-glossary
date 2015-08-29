@@ -20,7 +20,6 @@
 # fix to use jwt
 
 GoogleSpreadsheet = require "google-spreadsheet"
-passwdUser = require 'passwd-user'
 fuzzy = require 'fuzzy'
 
 module.exports = (robot) ->
@@ -35,11 +34,9 @@ module.exports = (robot) ->
 
     sheet = new GoogleSpreadsheet(process.env["GOOGLE_SPREADSHEET_KEY"]);
 
-    user_info = passwdUser.sync(process.getuid())
+    jwt_auth_file = process.env['GOOGLE_CREDS_FILE']
 
-    home_dir = user_info.home_dir || process.env[(if process.platform is "win32" then "USERPROFILE" else "HOME")]
-
-    creds = require "#{home_dir}/.google-generated-creds.json"
+    creds = require "#{jwt_auth_file}"
 
     # if auth is set, you can edit. you read the rows while authenticated in order to get the edit feed URLs from google
     sheet.useServiceAccountAuth creds, (err) ->
