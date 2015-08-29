@@ -5,18 +5,19 @@
 #
 # Dependencies:
 #   "fuzzy": "^0.1.0"
-#   "google-spreadsheet": "^0.2.8"
+#   "google-spreadsheet": "^1.0.1"
 #
 # Configuration:
 #   GOOGLE_SPREADSHEET_KEY
-#   GOOGLE_USER_NAME
-#   GOOGLE_USER_PASSWORD
 #
 # Commands:
 #   hubot what is ? - Glossary of GroupBy technical terms
 #
 # Author:
 #   ferronrsmith
+# Update Aug 28, 2015
+# updated to google-spreadsheet 1.0.1 - client auth is deprecated.
+# fix to use jwt
 
 GoogleSpreadsheet = require "google-spreadsheet"
 fuzzy = require 'fuzzy'
@@ -33,8 +34,12 @@ module.exports = (robot) ->
 
     sheet = new GoogleSpreadsheet(process.env["GOOGLE_SPREADSHEET_KEY"]);
 
+    home_dir = process.env[(if process.platform is "win32" then "USERPROFILE" else "HOME")]
+
+    creds = require "#{home_dir}/.google-generated-creds.json"
+
     # if auth is set, you can edit. you read the rows while authenticated in order to get the edit feed URLs from google
-    sheet.setAuth process.env["GOOGLE_USER_NAME"], process.env["GOOGLE_USER_PASSWORD"], (err) ->
+    sheet.useServiceAccountAuth creds, (err) ->
       sheet.getRows 1, (err, rows) ->
         console.log err  if err
         if rows? and rows.length > 0
