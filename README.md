@@ -1,5 +1,7 @@
 # hubot-glossary [![Build Status](https://travis-ci.org/bot-scripts/hubot-glossary.svg)](https://travis-ci.org/bot-scripts/hubot-glossary)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/groupby/hubot-glossary.svg)](https://greenkeeper.io/)
+
 A hubot script for pulling star wars quote
 
 See [`src/glossary.coffee`](src/glossary.coffee) for full documentation.
